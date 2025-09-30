@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Lista de Usuários{% endblock %}
+
+{% block content %}
+    <h2>Usuários Cadastrados</h2>
+    <ul>
+        {% for usuario in usuarios %}
+            <li>
+                <a href="{% url 'detalhes_usuario' usuario.id %}">{{ usuario.nome }}</a> - {{ usuario.email }}
+            </li>
+        {% empty %}
+            <li>Não há usuários cadastrados.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {% if usuario %}Editar Usuário{% else %}Novo Usuário{% endif %}
+{% endblock %}
+
+{% block content %}
+    <h2>
+        {% if usuario %}Editar Usuário{% else %}Adicionar Usuário{% endif %}
+    </h2>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">{% if usuario %}Salvar Alterações{% else %}Salvar{% endif %}</button>
+    </form>
+{% endblock %}

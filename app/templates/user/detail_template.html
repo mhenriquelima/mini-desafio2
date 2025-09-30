@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Detalhes do Usuário{% endblock %}
+
+{% block content %}
+    <h2>Detalhes do Usuário</h2>
+    {% include "components/_card.html" %}
+
+    <a href="{% url 'editar_usuario' usuario.id %}">Editar Usuário</a> |
+    <a href="{% url 'delete_usuario' usuario.id %}">Excluir Usuário</a>
+{% endblock %}
